@@ -1,4 +1,4 @@
-# ⚔️ The Legend of Zelda · Compendi d'Hyrule (Tauleta Sheikah)
+# ⚔️ The Legend of Zelda · Enciclopèdia d'Hyrule (Tauleta Sheikah)
 
 > **Projecte Full-Stack (Frontend React + Backend Flask)**  
 > *Inspirat en la interfície de la Tauleta Sheikah de The Legend of Zelda: Breath of the Wild i Tears of the Kingdom.*
