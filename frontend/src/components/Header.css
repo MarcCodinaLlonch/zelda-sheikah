@@ -1,0 +1,98 @@
+.capcalera {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  /* Ja no té caixa pròpia: és la part alta de la pantalla de la tauleta */
+}
+
+.filaEmblema {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.circuitLateral {
+  width: 150px;
+  height: 24px;
+  color: var(--sheikah-cyan);
+  opacity: 0.7;
+}
+
+/* L'ull és l'únic element amb resplendor fort: és el punt focal, com a la pantalla d'activació */
+.simbolSheikah {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sheikah-cyan);
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.7));
+  transition: filter 0.35s ease;
+}
+
+.simbolSheikah:hover {
+  filter: drop-shadow(0 0 18px var(--sheikah-cyan-bright));
+}
+
+.iconaSheikahEye {
+  width: 92px;
+  height: 85px;
+}
+
+.textosCapcalera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Títol: blanc blavós sobri, sense or ni ombra lluminosa (l'or queda per al marc de pedra) */
+.titolCapcalera {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  color: #dff8ff;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.subtitolCapcalera {
+  margin: 8px 0 0 0;
+  font-family: var(--font-hud);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--sheikah-cyan);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.separadorCircuit {
+  width: 240px;
+  height: 12px;
+  margin-top: 14px;
+  color: var(--sheikah-cyan);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .circuitLateral {
+    display: none;
+  }
+  .titolCapcalera {
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+  .subtitolCapcalera {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+  .iconaSheikahEye {
+    width: 70px;
+    height: 65px;
+  }
+}

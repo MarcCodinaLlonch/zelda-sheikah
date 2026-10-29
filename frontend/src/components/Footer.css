@@ -1,0 +1,47 @@
+/* El peu és la part baixa del marc de pedra: sense caixa, amb text de bronze i 3 nodes de llum */
+.peuPagina {
+  background: transparent;
+  border: none;
+  padding: 14px 20px 4px;
+  text-align: center;
+  color: var(--bronze-ancient);
+  font-family: var(--font-hud);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+/* Tres nodes de llum cian encastats al marc, com als de la tauleta (imatge 3) */
+.peuPagina::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background-color: var(--sheikah-cyan);
+  box-shadow: -26px 0 0 var(--sheikah-cyan), 26px 0 0 var(--sheikah-cyan);
+  filter: drop-shadow(0 0 5px var(--sheikah-cyan));
+}
+
+.peuPagina p {
+  margin: 0;
+}
+
+.peuPagina .creditor {
+  color: var(--gold-sheikah);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.subtextPeu {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}

@@ -1,0 +1,104 @@
+.seccioLlista {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  text-align: left;
+}
+
+.capcaleraLlista {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--sheikah-cyan-line);
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.titolComptador {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+
+.titolComptador h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: #dff8ff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.comptador {
+  font-family: var(--font-hud);
+  font-size: 13px;
+  font-weight: 700;
+  background-color: transparent;
+  color: var(--sheikah-cyan);
+  letter-spacing: 1.5px;
+}
+
+/* Línia decorativa de circuit amb nodes circulars a la dreta de la capçalera */
+.circuitCapcaleraLlista {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 240px;
+  opacity: 0.7;
+}
+
+.nodeCircuit {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--sheikah-cyan);
+  flex-shrink: 0;
+}
+
+.nodeCircuit.buit {
+  background-color: transparent;
+  border: 1.5px solid var(--sheikah-cyan);
+}
+
+.liniaCircuit {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, var(--sheikah-cyan), rgba(0, 229, 255, 0.2));
+}
+
+.graellaTasques {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.estaBuit {
+  background-color: var(--screen-panel);
+  border: 1px dashed var(--sheikah-amber);
+  border-radius: 4px;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.textEstatBuit {
+  margin: 0;
+  font-family: var(--font-hud);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--sheikah-amber);
+}
+
+@media (max-width: 640px) {
+  .circuitCapcaleraLlista {
+    display: none;
+  }
+}

@@ -1,0 +1,222 @@
+/* Xassís físic de la Tauleta Sheikah: marc de pedra gruixut amb relleu i bisell */
+.contenidorApp {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 48px);
+  background:
+    linear-gradient(145deg, #2c251f 0%, #1a1511 55%, #231d18 100%);
+  border: 2px solid #3a3027;
+  border-radius: 24px;
+  padding: 32px 32px 18px;
+  gap: 18px;
+  position: relative;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 1px rgba(184, 145, 70, 0.25),
+    inset 0 2px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -24px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Pantalla de vidre encastada: la capçalera, el filtre i la llista viuen aquí dins */
+.principalApp {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  flex-grow: 1;
+  background-color: var(--screen-bg);
+  /* Capes: 4 nodes de cantonada + resplendor central + quadrícula d'escaneig molt subtil */
+  background-image:
+    radial-gradient(circle, rgba(0, 229, 255, 0.95) 0 2.5px, rgba(0, 229, 255, 0.25) 3px, transparent 4.5px),
+    radial-gradient(circle, rgba(0, 229, 255, 0.95) 0 2.5px, rgba(0, 229, 255, 0.25) 3px, transparent 4.5px),
+    radial-gradient(circle, rgba(0, 229, 255, 0.95) 0 2.5px, rgba(0, 229, 255, 0.25) 3px, transparent 4.5px),
+    radial-gradient(circle, rgba(0, 229, 255, 0.95) 0 2.5px, rgba(0, 229, 255, 0.25) 3px, transparent 4.5px),
+    radial-gradient(circle at 50% 14%, rgba(0, 229, 255, 0.1) 0%, transparent 52%),
+    linear-gradient(rgba(0, 229, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
+  background-size:
+    10px 10px, 10px 10px, 10px 10px, 10px 10px,
+    100% 100%, 32px 32px, 32px 32px;
+  background-position:
+    10px 10px,
+    calc(100% - 10px) 10px,
+    10px calc(100% - 10px),
+    calc(100% - 10px) calc(100% - 10px),
+    0 0, 0 0, 0 0;
+  background-repeat:
+    no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, repeat, repeat;
+  border: 3px solid #0a0c10;
+  border-radius: 12px;
+  padding: 30px 28px;
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(184, 145, 70, 0.6),
+    0 0 0 5px #0e0b09,
+    inset 0 0 60px rgba(0, 0, 0, 0.9);
+}
+
+.principalApp::before {
+  left: -21px;
+}
+
+.principalApp::after {
+  right: -21px;
+}
+
+/* Consola de Filtre estil Runa / Terminal Sheikah amb cantonades bisellades a 45° */
+.panellFiltre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 22px;
+  background-color: var(--screen-panel);
+  border: 1px solid var(--sheikah-cyan-line);
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.etiquetaFiltre {
+  font-family: var(--font-hud);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold-sheikah);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top:6px;
+}
+
+/* Petit rombe cian davant de l'etiqueta del filtre */
+.etiquetaFiltre::before {
+  content: '◆';
+  color: var(--sheikah-cyan);
+  font-size: 11px;
+  text-shadow: 0 0 6px var(--sheikah-cyan);
+  padding-bottom: 3px;
+}
+
+.embolcallSelect {
+  flex: 1;
+  position: relative;
+}
+
+/* Fletxa geomètrica cian personalitzada per al selector */
+.embolcallSelect::after {
+  content: '▼';
+  font-size: 10px;
+  color: var(--sheikah-cyan);
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  text-shadow: 0 0 6px var(--sheikah-cyan);
+}
+
+.selectCategoria {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 9px 36px 9px 14px;
+  background-color: var(--screen-inset);
+  color: var(--sheikah-cyan-bright);
+  border: 1px solid var(--sheikah-cyan-line);
+  border-radius: 2px;
+  font-family: var(--font-hud);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.selectCategoria:hover {
+  border-color: var(--sheikah-cyan);
+  box-shadow: 0 0 12px var(--sheikah-cyan-glow);
+}
+
+.selectCategoria:focus {
+  border-color: var(--sheikah-cyan);
+  box-shadow: 0 0 16px var(--sheikah-cyan-glow);
+}
+
+.selectCategoria option {
+  background-color: var(--screen-bg);
+  color: var(--text-primary);
+  font-family: var(--font-hud);
+}
+
+/* Missatges de càrrega i d'error estil senyal de la Tauleta */
+.missatgeEstat {
+  padding: 28px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: var(--font-hud);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.missatgeEstat.carregant {
+  background-color: var(--screen-panel);
+  border: 1px solid var(--sheikah-cyan);
+  color: var(--sheikah-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 0 20px var(--sheikah-cyan-soft);
+}
+
+.missatgeEstat.error {
+  background-color: rgba(255, 123, 0, 0.08);
+  border: 1px solid var(--sheikah-amber);
+  color: var(--sheikah-amber);
+  box-shadow: 0 0 20px rgba(255, 123, 0, 0.15);
+}
+
+.puntLlum {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--sheikah-cyan);
+  box-shadow: 0 0 10px var(--sheikah-cyan);
+  display: inline-block;
+  animation: parpelleig 1.4s infinite ease-in-out;
+}
+
+@keyframes parpelleig {
+  0%, 100% { opacity: 0.3; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+
+@media (max-width: 640px) {
+  .contenidorApp {
+    padding: 14px;
+    border-radius: 16px;
+  }
+  .principalApp {
+    padding: 18px 14px;
+  }
+  .principalApp::before,
+  .principalApp::after {
+    display: none;
+  }
+  .panellFiltre {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+}

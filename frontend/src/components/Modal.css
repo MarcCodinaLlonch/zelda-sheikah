@@ -1,0 +1,213 @@
+/* Fons fosc que cobreix tota la pantalla; la finestra es mostra al centre */
+.fonsModal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(3, 7, 12, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* La finestra és una petita pantalla Sheikah: mateix vidre, vora fina i cantonada bisellada */
+.finestraModal {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--screen-bg);
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(0, 229, 255, 0.1) 0%, transparent 55%),
+    linear-gradient(rgba(0, 229, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+  border: 1px solid var(--sheikah-cyan);
+  border-top: 4px solid var(--bronze-ancient);
+  padding: 32px;
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.2), 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Botó per tancar, sempre visible a dalt a la dreta */
+.botoTancar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  color: var(--sheikah-cyan);
+  border: 1px solid rgba(0, 229, 255, 0.45);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  padding-top: 2px;
+}
+
+.botoTancar:hover,
+.botoTancar:focus-visible {
+  background-color: rgba(0, 229, 255, 0.15);
+  color: var(--sheikah-cyan-bright);
+  outline: none;
+}
+
+.contingutModal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 28px;
+}
+
+/* Foto gran amb visor d'escàner */
+.visorModal {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--screen-inset);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  overflow: hidden;
+}
+
+.imatgeModal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.marcVisorModal {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--sheikah-cyan);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.modalTL { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+.modalTR { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+.modalBL { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+.modalBR { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+/* Columna d'informació */
+.columnaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.registreModal {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-hud);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--sheikah-cyan);
+}
+
+.nodeRegistreModal {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--sheikah-cyan);
+  margin-bottom: 3px;
+}
+
+.titolModal {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: #dff8ff;
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.titolAnglesModal {
+  margin: -6px 0 0;
+  font-family: var(--font-hud);
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.etiquetesModal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.etiquetaModal {
+  font-family: var(--font-hud);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 8px 1px 10px;
+  color: var(--text-secondary);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
+/* Les etiquetes de joc (BOTW / TOTK) en to bronze per diferenciar-les de la categoria */
+.etiquetaJoc {
+  color: var(--bronze-ancient);
+  border-color: rgba(184, 145, 70, 0.5);
+}
+
+/* Descripció completa, sense retall */
+.descripcioModal {
+  margin: 0;
+  padding: 12px 14px;
+  background-color: var(--screen-inset);
+  border-left: 2px solid rgba(0, 229, 255, 0.4);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.seccioModal h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-hud);
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--bronze-ancient);
+  border-bottom: 1px solid rgba(184, 145, 70, 0.3);
+  padding-bottom: 4px;
+}
+
+.seccioModal ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.seccioModal li::marker {
+  color: var(--sheikah-cyan);
+}
+
+/* Mòbil: una sola columna i la finestra ocupa quasi tota la pantalla */
+@media (max-width: 720px) {
+  .fonsModal {
+    padding: 10px;
+  }
+  .finestraModal {
+    padding: 52px 18px 20px;
+    max-height: 94vh;
+  }
+  .contingutModal {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .titolModal {
+    font-size: 22px;
+  }
+}
