@@ -49,7 +49,7 @@ El projecte s'ha desenvolupat amb una arquitectura **Full-Stack desacoblada**:
 ## 📂 Estructura del Repositori
 
 ```text
-zelda-sheikah-compendium/
+zelda-sheikah/
 ├── frontend/                     # Aplicació React (Client)
 │   ├── public/                   # Icones i assets estàtics
 │   ├── src/
@@ -80,8 +80,8 @@ zelda-sheikah-compendium/
 
 ### 1. Clonar el repositori
 ```bash
-git clone https://github.com/<el-teu-usuari>/zelda-sheikah-compendium.git
-cd zelda-sheikah-compendium
+git clone https://github.com/<el-teu-usuari>/zelda-sheikah.git
+cd zelda-sheikah
 ```
 
 ---
