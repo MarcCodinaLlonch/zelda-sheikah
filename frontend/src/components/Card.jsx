@@ -6,9 +6,8 @@ function Card({ element, onSelect }) {
 
   return (
     <article className="contenidorCard">
-      {/* .cosCard porta el retall bisellat; el resplendor del hover viu a l'<article> perquè no es talli */}
       <div className="cosCard">
-        {/* Barra superior HUD: número de registre i categoria */}
+        {/* Barra superior: número de registre i categoria */}
         <div className="capcaleraCard">
           <span className="codiRegistre">
             <span className="nodeRegistre" aria-hidden="true"></span>

@@ -193,10 +193,10 @@
 .descripcioCard p {
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 3; /*màxim 3 línies*/
   line-clamp: 3;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow: hidden; /*amaga resta del text*/
 }
 
 /* Botó "Veure detall": línia fina cian, s'omple suaument en passar-hi per sobre o amb el teclat */

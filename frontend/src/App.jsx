@@ -134,7 +134,7 @@ function App() {
 
       <Footer />
 
-      {/* Si hi ha un element seleccionat, mostrem la finestra de detall a sobre de la pantalla */}
+      {/* Si hi ha un element seleccionat, mostrem modal sobre de la pantalla */}
       {selectedElement && (
         <Modal element={selectedElement} onClose={() => setSelectedElement(null)} />
       )}

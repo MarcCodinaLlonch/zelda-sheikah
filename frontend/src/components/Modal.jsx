@@ -10,22 +10,20 @@ function Modal({ element, onClose }) {
   const games = element.games || [];
 
   return (
-    // Clicar al fons fosc tanca la finestra
     <div className="fonsModal" onClick={onClose}>
-      {/* stopPropagation: clicar dins la finestra NO l'ha de tancar */}
-      <div
+      <div 
+
         className="finestraModal"
-        role="dialog"
-        aria-modal="true"
+        role="dialog" //informa navegador que aquest element html és un element emergent
+        aria-modal="true" //contingut darrere queda temporalment bloquejat
         aria-label={`Detall de ${element.name}`}
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()} // evitem que l'event onClick es propagi cap a l'element pare i es tanqui el modal si fem clic dins del modal
       >
         <button type="button" className="botoTancar" onClick={onClose} aria-label="Tancar">
           ✕
         </button>
 
         <div className="contingutModal">
-          {/* Columna esquerra: foto gran amb el visor d'escàner */}
           <div className="columnaImatge">
             <div className="visorModal">
               <span className="marcVisorModal modalTL" aria-hidden="true"></span>
@@ -36,7 +34,6 @@ function Modal({ element, onClose }) {
             </div>
           </div>
 
-          {/* Columna dreta: tota la informació */}
           <div className="columnaInfo">
             <p className="registreModal">
               <span className="nodeRegistreModal" aria-hidden="true"></span>
@@ -44,6 +41,8 @@ function Modal({ element, onClose }) {
             </p>
 
             <h2 className="titolModal">{element.name}</h2>
+            {/* Si l'API no té el camp 'name_en' (és null o buit), 
+                evitem pintar un paràgraf buit i no es renderitza res. */}
             {element.name_en && <p className="titolAnglesModal">{element.name_en}</p>}
 
             <div className="etiquetesModal">
@@ -54,7 +53,7 @@ function Modal({ element, onClose }) {
             </div>
 
             <p className="descripcioModal">{element.description}</p>
-
+            {/* Mostra location, drop, propietats del item si n'hi ha */}
             {locations.length > 0 && (
               <div className="seccioModal">
                 <h3>Llocs</h3>
